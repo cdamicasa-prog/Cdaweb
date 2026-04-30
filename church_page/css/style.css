@@ -1121,6 +1121,29 @@ body {
 }
 
 /* --- Floating WhatsApp Button --- */
+.ese-float {
+    position: fixed;
+    bottom: 95px; /* Adjust to sit perfectly above */
+    right: 30px;
+    background-color: white;
+    color: #333;
+    padding: 12px 24px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Uniform gap */
+    text-decoration: none;
+    font-weight: 700; /* Matching weight */
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee;
+    height: 52px; /* Fixed height for exact match */
+    box-sizing: border-box;
+}
+
 .whatsapp-float {
     position: fixed;
     bottom: 30px;
@@ -1131,20 +1154,25 @@ body {
     border-radius: 50px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
     font-family: var(--font-body);
     font-size: 1.1rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     z-index: 1000;
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    height: 52px; /* Fixed height for exact match */
+    box-sizing: border-box;
 }
 
-.whatsapp-float:hover {
+.ese-float img {
+    height: 26px; /* Matching icon presence */
+    width: auto;
+}
+
+.whatsapp-float:hover, .ese-float:hover {
     transform: translateY(-5px);
-    background-color: var(--dark-blue);
-    color: var(--white);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
@@ -1158,6 +1186,19 @@ body {
         right: 20px;
         padding: 10px 20px;
         font-size: 1rem;
+        height: 44px;
+    }
+    
+    .ese-float {
+        bottom: 75px;
+        right: 20px;
+        padding: 10px 20px;
+        font-size: 1rem;
+        height: 44px;
+    }
+    
+    .ese-float img {
+        height: 20px;
     }
     
     .whatsapp-float i {
