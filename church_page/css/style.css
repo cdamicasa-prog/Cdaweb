@@ -1103,6 +1103,16 @@ body {
     #predicas.section {
         padding-top: 20px;
     }
+
+    .carousel-container {
+        gap: 8px;
+    }
+
+    .carousel-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 480px) {
