@@ -1242,6 +1242,12 @@ body {
     margin-bottom: 30px;
 }
 
+.footer-motto-logo-group {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
 .footer-col {
     display: flex;
     flex-direction: column;
@@ -1260,6 +1266,7 @@ body {
     line-height: 1;
     text-transform: uppercase;
     font-size: 2.8rem;
+    white-space: nowrap;
 }
 
 .whatsapp-text .comunidad {
@@ -1312,6 +1319,7 @@ body {
     font-size: 2.2rem;
     line-height: 0.85;
     margin: 0;
+    white-space: nowrap;
 }
 
 .footer-logo {
@@ -1328,128 +1336,107 @@ body {
     align-items: center;
     justify-content: center;
     gap: 8px;
+    white-space: nowrap;
 }
 
 /* Responsive Custom Footer */
 @media (max-width: 992px) {
-    .custom-footer {
-        padding: 40px 10px 30px;
-    }
-
     .footer-grid {
-        display: grid;
-        grid-template-columns: 1fr 2px 1fr;
-        gap: 35px 25px;
+        flex-direction: column;
+        gap: 40px;
         align-items: center;
-        margin-bottom: 25px;
     }
 
+    /* Group 1: Comunidad + QR */
     .whatsapp-qr-col {
-        grid-column: 1 / -1;
-        flex-direction: row;
+        flex-direction: row !important; /* Force side-by-side */
         justify-content: center;
-        gap: 30px;
+        gap: 20px;
+        width: 100%;
     }
-    
+
     .whatsapp-text {
+        font-size: 3.2rem; /* Increased */
         text-align: center;
-        font-size: 3.6rem;
     }
 
     .qr-code {
-        width: 160px;
-        height: 160px;
+        width: 140px; /* Increased */
+        height: 140px;
     }
 
-    .logo-col {
-        grid-column: 1;
-        grid-row: 2;
-        justify-self: end;
-        align-items: flex-end;
-    }
-
-    .footer-logo {
-        width: 180px;
-    }
-
-    .footer-divider {
-        grid-column: 2;
-        grid-row: 2;
-        width: 2px;
-        height: 150px;
-        background-color: var(--white);
-        margin: 0;
-    }
-
-    .motto-col {
-        grid-column: 3;
-        grid-row: 2;
-        justify-self: start;
+    /* Group 2: Logo + Motto */
+    .footer-motto-logo-group {
+        flex-direction: row !important;
+        justify-content: center;
+        gap: 25px;
+        width: 100%;
     }
 
     .motto-col p {
+        font-size: 2.4rem; /* Increased */
         text-align: left;
-        font-size: 2.6rem;
-        line-height: 0.85;
     }
 
-    .social-col {
-        grid-column: 1 / -1;
-        grid-row: 3;
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 15px 30px;
+    .footer-logo {
+        width: 150px; /* Increased */
     }
-    
+
+    .footer-divider {
+        height: 80px;
+        margin: 0 10px;
+    }
+
+    /* Group 3: Social */
+    .social-col {
+        flex-direction: row !important; /* Force side-by-side */
+        justify-content: center;
+        gap: 15px;
+        width: 100%;
+        flex-wrap: nowrap; /* Force one line as requested */
+    }
+
     .social-link {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
+        gap: 5px;
+    }
+
+    .social-link i {
+        font-size: 1.4rem;
+        width: auto;
+    }
+
+    /* Group 4: Address */
+    .footer-address {
+        font-size: 1.2rem;
+        width: 100%;
+        justify-content: center;
     }
 }
 
 @media (max-width: 480px) {
-    .footer-grid {
-        gap: 35px 15px;
-    }
-
-    .whatsapp-qr-col {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
     .whatsapp-text {
-        font-size: 3.8rem;
-        text-align: center;
+        font-size: 2.4rem; /* Increased from 2rem */
     }
-    
+
     .qr-code {
-        width: 200px;
-        height: 200px;
+        width: 120px; /* Increased from 100px */
+        height: 120px;
     }
-    
-    .footer-logo {
-        width: 150px;
-    }
-    
+
     .motto-col p {
-        font-size: 2.2rem;
-        line-height: 0.85;
+        font-size: 1.8rem; /* Increased from 1.6rem */
     }
-    
-    .footer-divider {
-        height: 130px;
+
+    .footer-logo {
+        width: 120px; /* Increased from 100px */
     }
-    
-    .social-col {
-        gap: 10px 15px;
-    }
-    
+
     .social-link {
-        font-size: 1.1rem;
+        font-size: 0.9rem;
     }
-    
+
     .footer-address {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 }
