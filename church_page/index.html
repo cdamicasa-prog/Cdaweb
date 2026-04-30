@@ -44,13 +44,14 @@
 
     <!-- Hero Video Section -->
     <header class="hero-section" style="background: #000; position: relative; width: 100%; overflow: hidden;">
-        <iframe id="heroVideo"
+        <iframe id="heroVideo" class="hero-video-iframe"
     src="https://www.youtube.com/embed/2ErbIbpybqI?autoplay=1&mute=1&loop=1&playlist=2ErbIbpybqI&controls=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
     referrerpolicy="strict-origin-when-cross-origin"
-    style="position: absolute; top: 50%; left: 50%; width: 100vw; height: 56.25vw; min-height: 100vh; min-width: 177.77vh; transform: translate(-50%, -50%); border: 0; pointer-events: none;"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen>
 </iframe>
+        <!-- Invisible overlay to completely block YouTube hover/clicks -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; background: transparent;"></div>
     </header>
 
     <!-- Nuestra Visión -->
@@ -460,12 +461,46 @@
             </div>
         </div>
 
-        <!-- Final Footer Image -->
-        <div class="final-footer-image" style="width: 100%; overflow: hidden; line-height: 0;">
-            <picture>
-                <source srcset="assets/pie%20de%20p%C3%A1gina%20vertical.png" media="(max-width: 768px)">
-                <img src="assets/pie%20de%20p%C3%A1gina.png" alt="Pie de Página" style="width: 100%; height: auto; display: block;">
-            </picture>
+        <!-- Custom Code Footer -->
+        <div class="custom-footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <!-- Col 1: Join WhatsApp + QR -->
+                    <div class="footer-col whatsapp-qr-col">
+                        <div class="whatsapp-text">
+                            <span class="unete">ÚNETE A NUESTRA</span><br>
+                            <span class="comunidad">COMUNIDAD</span><br>
+                            <span class="whatsapp-word">DE WHATSAPP</span>
+                        </div>
+                        <img src="assets/Qr%20Comunidad.jpg" alt="QR WhatsApp" class="qr-code">
+                    </div>
+                    
+                    <!-- Col 2: Social Media -->
+                    <div class="footer-col social-col">
+                        <a href="https://wa.me/573208991072" class="social-link" target="_blank"><i class="fab fa-whatsapp"></i> 3208991072</a>
+                        <a href="https://instagram.com/CdaMiCasa" class="social-link" target="_blank"><i class="fab fa-instagram"></i> /CdaMiCasa</a>
+                        <a href="https://facebook.com/CdaMiCasa" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i> CdaMiCasa</a>
+                    </div>
+
+                    <!-- Vertical Divider -->
+                    <div class="footer-divider"></div>
+
+                    <!-- Col 3: Motto -->
+                    <div class="footer-col motto-col">
+                        <p>Una iglesia de<br>bendición, unción<br>y transformación<br>para las familias</p>
+                    </div>
+
+                    <!-- Col 4: Logo -->
+                    <div class="footer-col logo-col">
+                        <img src="assets/cdamicasa-blanco.png" alt="CDA Mi Casa Logo" class="footer-logo">
+                    </div>
+                </div>
+
+                <!-- Address Row -->
+                <div class="footer-address">
+                    <i class="fas fa-map-marker-alt"></i> Carrera 78 B #38-26 Sur, Kennedy Central
+                </div>
+            </div>
         </div>
 
         <div class="footer-bottom">
@@ -518,7 +553,7 @@
     </script>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/573208991072" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <a href="https://chat.whatsapp.com/IW3lEKB5NHnH8YmXXcV9so" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i> Únete a nuestra comunidad
     </a>
 

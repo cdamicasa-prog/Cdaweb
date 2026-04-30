@@ -230,12 +230,24 @@ body {
 
 /* --- Hero Section --- */
 .hero-section {
-    height: 60vh;
-    background-color: var(--med-gray);
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: var(--black);
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+}
+
+.hero-video-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border: 0;
 }
 
 .hero-overlay {
@@ -1150,5 +1162,234 @@ body {
     
     .whatsapp-float i {
         font-size: 1.4rem;
+    }
+}
+
+/* --- Custom Code Footer --- */
+.custom-footer {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 50px 20px 30px;
+    margin-top: 40px;
+}
+
+.footer-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.whatsapp-qr-col {
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+.whatsapp-text {
+    font-family: var(--font-title);
+    text-align: center;
+    line-height: 1;
+    text-transform: uppercase;
+    font-size: 4.4rem;
+}
+
+.whatsapp-text .comunidad {
+    font-weight: bold;
+}
+
+.qr-code {
+    width: 190px;
+    height: 190px;
+    border-radius: 12px;
+    border: 5px solid white;
+    object-fit: cover;
+}
+
+.social-col {
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.social-link {
+    color: var(--white);
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: opacity 0.3s;
+}
+
+.social-link:hover {
+    opacity: 0.8;
+}
+
+.social-link i {
+    font-size: 1.6rem;
+    width: 25px;
+    text-align: center;
+}
+
+.footer-divider {
+    width: 2px;
+    height: 100px;
+    background-color: var(--white);
+}
+
+.motto-col p {
+    font-family: var(--font-title);
+    font-size: 2.8rem;
+    line-height: 0.85;
+    margin: 0;
+}
+
+.footer-logo {
+    width: 140px;
+    object-fit: contain;
+}
+
+.footer-address {
+    text-align: center;
+    font-family: var(--font-body);
+    font-size: 1.4rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Responsive Custom Footer */
+@media (max-width: 992px) {
+    .custom-footer {
+        padding: 40px 10px 30px;
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 1fr 2px 1fr;
+        gap: 35px 25px;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+
+    .whatsapp-qr-col {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        justify-content: center;
+        gap: 30px;
+    }
+    
+    .whatsapp-text {
+        text-align: center;
+        font-size: 3.6rem;
+    }
+
+    .qr-code {
+        width: 160px;
+        height: 160px;
+    }
+
+    .logo-col {
+        grid-column: 1;
+        grid-row: 2;
+        justify-self: end;
+        align-items: flex-end;
+    }
+
+    .footer-logo {
+        width: 180px;
+    }
+
+    .footer-divider {
+        grid-column: 2;
+        grid-row: 2;
+        width: 2px;
+        height: 150px;
+        background-color: var(--white);
+        margin: 0;
+    }
+
+    .motto-col {
+        grid-column: 3;
+        grid-row: 2;
+        justify-self: start;
+    }
+
+    .motto-col p {
+        text-align: left;
+        font-size: 2.6rem;
+        line-height: 0.85;
+    }
+
+    .social-col {
+        grid-column: 1 / -1;
+        grid-row: 3;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px 30px;
+    }
+    
+    .social-link {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-grid {
+        gap: 35px 15px;
+    }
+
+    .whatsapp-qr-col {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .whatsapp-text {
+        font-size: 3.8rem;
+        text-align: center;
+    }
+    
+    .qr-code {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .footer-logo {
+        width: 150px;
+    }
+    
+    .motto-col p {
+        font-size: 2.2rem;
+        line-height: 0.85;
+    }
+    
+    .footer-divider {
+        height: 130px;
+    }
+    
+    .social-col {
+        gap: 10px 15px;
+    }
+    
+    .social-link {
+        font-size: 1.1rem;
+    }
+    
+    .footer-address {
+        font-size: 1.1rem;
     }
 }
