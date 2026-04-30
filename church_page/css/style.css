@@ -1184,25 +1184,44 @@ body {
     .whatsapp-float {
         bottom: 20px;
         right: 20px;
-        padding: 10px 20px;
-        font-size: 1rem;
-        height: 44px;
+        width: 55px;
+        height: 55px;
+        padding: 0;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        z-index: 1000;
     }
     
     .ese-float {
-        bottom: 75px;
+        bottom: 85px;
         right: 20px;
-        padding: 10px 20px;
-        font-size: 1rem;
-        height: 44px;
+        width: 55px;
+        height: 55px;
+        padding: 0;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        z-index: 1000;
     }
     
-    .ese-float img {
-        height: 20px;
+    .whatsapp-float span, .ese-float span {
+        display: none;
     }
     
     .whatsapp-float i {
-        font-size: 1.4rem;
+        font-size: 1.8rem;
+        margin: 0;
+        padding: 0;
+        display: block;
+    }
+    
+    .ese-float img {
+        height: 24px;
+        width: auto;
+        margin: 0;
+        padding: 0;
+        display: block;
     }
 }
 
