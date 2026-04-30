@@ -1177,8 +1177,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
+    gap: 30px;
+    flex-wrap: nowrap;
     margin-bottom: 30px;
 }
 
@@ -1199,7 +1199,7 @@ body {
     text-align: center;
     line-height: 1;
     text-transform: uppercase;
-    font-size: 4.4rem;
+    font-size: 2.8rem;
 }
 
 .whatsapp-text .comunidad {
@@ -1207,15 +1207,15 @@ body {
 }
 
 .qr-code {
-    width: 190px;
-    height: 190px;
+    width: 150px;
+    height: 150px;
     border-radius: 12px;
     border: 5px solid white;
     object-fit: cover;
 }
 
 .social-col {
-    gap: 12px;
+    gap: 6px;
     align-items: flex-start;
 }
 
@@ -1223,7 +1223,7 @@ body {
     color: var(--white);
     text-decoration: none;
     font-family: var(--font-body);
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -1236,8 +1236,8 @@ body {
 }
 
 .social-link i {
-    font-size: 1.6rem;
-    width: 25px;
+    font-size: 1.8rem;
+    width: 28px;
     text-align: center;
 }
 
@@ -1249,13 +1249,13 @@ body {
 
 .motto-col p {
     font-family: var(--font-title);
-    font-size: 2.8rem;
+    font-size: 2.2rem;
     line-height: 0.85;
     margin: 0;
 }
 
 .footer-logo {
-    width: 140px;
+    width: 160px;
     object-fit: contain;
 }
 
