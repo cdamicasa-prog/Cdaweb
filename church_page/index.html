@@ -42,17 +42,63 @@
         </div>
     </nav>
 
-    <!-- Hero Video Section -->
-    <header class="hero-section" style="background: #000; position: relative; width: 100%; overflow: hidden;">
-        <iframe id="heroVideo" class="hero-video-iframe"
-    src="https://www.youtube.com/embed/2ErbIbpybqI?autoplay=1&mute=1&loop=1&playlist=2ErbIbpybqI&controls=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
-    referrerpolicy="strict-origin-when-cross-origin"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; compute-pressure"
-    allowfullscreen>
-</iframe>
-        <!-- Invisible overlay to completely block YouTube hover/clicks -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; background: transparent;"></div>
+    <!-- Hero Video Carousel Section -->
+    <header class="hero-carousel">
+        <!-- Radio Controls -->
+        <input type="radio" name="hero-slide" id="hero-1" checked>
+        <input type="radio" name="hero-slide" id="hero-2">
+
+        <div class="hero-track-wrapper">
+            <div class="hero-track">
+                <!-- Slide 1: Video original de bienvenida -->
+                <div class="hero-slide">
+                    <iframe
+                        src="https://www.youtube.com/embed/2ErbIbpybqI?autoplay=1&mute=1&loop=1&playlist=2ErbIbpybqI&controls=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; compute-pressure"
+                        allowfullscreen>
+                    </iframe>
+                    <div class="hero-overlay-block"></div>
+                </div>
+                <!-- Slide 2: Nuevo video -->
+                <div class="hero-slide">
+                    <iframe
+                        src="https://www.youtube.com/embed/Ak4YQth5gbE?autoplay=0&mute=1&loop=1&playlist=Ak4YQth5gbE&controls=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; compute-pressure"
+                        allowfullscreen>
+                    </iframe>
+                    <div class="hero-overlay-block"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <label for="hero-2" class="hero-arrow hero-arrow-next"><i class="fas fa-chevron-right"></i></label>
+        <label for="hero-1" class="hero-arrow hero-arrow-prev"><i class="fas fa-chevron-left"></i></label>
+
+        <!-- Navigation Dots -->
+        <div class="hero-dots">
+            <label for="hero-1" class="hero-dot"></label>
+            <label for="hero-2" class="hero-dot"></label>
+        </div>
     </header>
+
+    <!-- Script to handle hero carousel video play/pause -->
+    <script>
+        document.querySelectorAll('input[name="hero-slide"]').forEach(radio => {
+            radio.addEventListener('change', () => {
+                const slides = document.querySelectorAll('.hero-slide iframe');
+                slides.forEach((iframe, index) => {
+                    if (radio.id === `hero-${index + 1}`) {
+                        iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+                    } else {
+                        iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+                    }
+                });
+            });
+        });
+    </script>
 
     <!-- Nuestra Visión -->
     <section id="vision" class="section vision-section" style="padding-bottom: 0px;">
