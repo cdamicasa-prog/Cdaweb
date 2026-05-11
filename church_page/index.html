@@ -84,18 +84,24 @@
         </div>
     </header>
 
-    <!-- Script to handle hero carousel video play/pause -->
+    <!-- Script to handle hero carousel video play/pause/restart -->
     <script>
         document.querySelectorAll('input[name="hero-slide"]').forEach(radio => {
             radio.addEventListener('change', () => {
                 const slides = document.querySelectorAll('.hero-slide iframe');
                 slides.forEach((iframe, index) => {
-                    if (radio.id === `hero-${index + 1}`) {
-                        iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-                    } else {
-                        iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-                    }
+                    // Pause and restart all videos first
+                    iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+                    iframe.contentWindow.postMessage('{"event":"command","func":"seekTo","args":[0, true]}', '*');
                 });
+                // Then play only the active slide's video from the start
+                const activeIndex = parseInt(radio.id.replace('hero-', '')) - 1;
+                const activeIframe = slides[activeIndex];
+                if (activeIframe) {
+                    setTimeout(() => {
+                        activeIframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+                    }, 100);
+                }
             });
         });
     </script>
